@@ -17,32 +17,32 @@ function playRound(playerSelection,computerSelection){
             return "It's Draw";
         }
         else if(playerSelection.toLowerCase() === "rock" && computerSelection.toLowerCase() === "scissors"){
-            playerScoreValue++;
+            ++playerScoreValue;
             playerScore.textContent='you: '+playerScoreValue;
             return "You Win! Rock beats Scissors";
         }
         else if(playerSelection.toLowerCase() === "rock" && computerSelection.toLowerCase() === "paper"){
-            computerScoreValue++;
+            ++computerScoreValue;
             computerScore.textContent='computer: '+computerScoreValue;
             return "You Lose! Paper beats Rock";
         }
         else if(playerSelection.toLowerCase() === "paper" && computerSelection.toLowerCase() === "rock"){
-            playerScoreValue++;
+            ++playerScoreValue;
             playerScore.textContent='you: '+playerScoreValue;
             return "You Win! Paper beats Rock";
         }
         else if(playerSelection.toLowerCase() === "paper" && computerSelection.toLowerCase() === "scissors"){
-            computerScoreValue++;
+            ++computerScoreValue;
             computerScore.textContent='computer: '+computerScoreValue;
             return "You Lose! Scissors beats Paper"
         }    
         else if(playerSelection.toLowerCase() === "scissors" && computerSelection.toLowerCase() === "paper"){
-            playerScoreValue++;
+            ++playerScoreValue;
             playerScore.textContent='you: '+playerScoreValue;
             return "You Win! Scissors beats Paper"
         }    
         else if(playerSelection.toLowerCase() === "scissors" && computerSelection.toLowerCase() === "rock"){
-            computerScoreValue++;
+            ++computerScoreValue;
             computerScore.textContent='computer: '+computerScoreValue;
             return "You Lose! Rock beats Scissors"
         }
@@ -51,31 +51,33 @@ function playRound(playerSelection,computerSelection){
         }
     }
     else if(playerScoreValue===5){
-        playerScore.remove();
-        computerScore.remove();
-        button[0].remove();
-        button[1].remove();
-        button[2].remove();
+        playerScore.style.display='none';
+        computerScore.style.display='none';
+        button[0].style.display='none';
+        button[1].style.display='none';
+        button[2].style.display='none';
 
-        const playAgain = document.createElement('button');
-        console.log(playAgain)
+        playAgain.style.display='initial'
+        body.appendChild(playAgain);
+        playAgain.addEventListener('click',replay);
+        
         return result.textContent='You Win!';
-
     }
     else if(computerScoreValue===5){
-        playerScore.remove()
-        computerScore.remove();
-        button[0].remove();
-        button[1].remove();
-        button[2].remove();
+        playerScore.style.display='none'
+        computerScore.style.display='none';
+        button[0].style.display='none';
+        button[1].style.display='none';
+        button[2].style.display='none';
 
-        const playAgain = document.createElement('button');
-        console.log(playAgain)
-        
+        playAgain.style.display='initial'
+        body.appendChild(playAgain);
+        playAgain.addEventListener('click',replay);
+
         return result.textContent='Computer Win!';
     }
 }
-
+const body = document.querySelector('body');
 const button = document.querySelectorAll('button');
 
 const rock = button[0].addEventListener('click',selectRock);
@@ -98,6 +100,23 @@ const computerScore=document.querySelector('.computerScore');
 
 playerScore.textContent='you: '+playerScoreValue;
 computerScore.textContent='computer: '+computerScoreValue;
+
+const playAgain = document.createElement('button');
+playAgain.textContent = 'Play Again';
+
+function replay(){
+    playerScoreValue=0;
+    computerScoreValue=0;
+    playerScore.textContent='you: '+playerScoreValue;
+    computerScore.textContent='computer: '+computerScoreValue;
+    playerScore.style.display='block'
+    computerScore.style.display='block';
+    button[0].style.display='initial';
+    button[1].style.display='initial';
+    button[2].style.display='initial';
+    result.textContent='Select your move';
+    playAgain.style.display='none';
+}
 
 
 
