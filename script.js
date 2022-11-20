@@ -18,32 +18,32 @@ function playRound(playerSelection,computerSelection){
         }
         else if(playerSelection.toLowerCase() === "rock" && computerSelection.toLowerCase() === "scissors"){
             ++playerScoreValue;
-            playerScore.textContent='you: '+playerScoreValue;
+            playerScore.textContent=playerScoreValue;
             return "You Win! Rock beats Scissors";
         }
         else if(playerSelection.toLowerCase() === "rock" && computerSelection.toLowerCase() === "paper"){
             ++computerScoreValue;
-            computerScore.textContent='computer: '+computerScoreValue;
+            computerScore.textContent=computerScoreValue;
             return "You Lose! Paper beats Rock";
         }
         else if(playerSelection.toLowerCase() === "paper" && computerSelection.toLowerCase() === "rock"){
             ++playerScoreValue;
-            playerScore.textContent='you: '+playerScoreValue;
+            playerScore.textContent=playerScoreValue;
             return "You Win! Paper beats Rock";
         }
         else if(playerSelection.toLowerCase() === "paper" && computerSelection.toLowerCase() === "scissors"){
             ++computerScoreValue;
-            computerScore.textContent='computer: '+computerScoreValue;
+            computerScore.textContent=computerScoreValue;
             return "You Lose! Scissors beats Paper"
         }    
         else if(playerSelection.toLowerCase() === "scissors" && computerSelection.toLowerCase() === "paper"){
             ++playerScoreValue;
-            playerScore.textContent='you: '+playerScoreValue;
+            playerScore.textContent=playerScoreValue;
             return "You Win! Scissors beats Paper"
         }    
         else if(playerSelection.toLowerCase() === "scissors" && computerSelection.toLowerCase() === "rock"){
             ++computerScoreValue;
-            computerScore.textContent='computer: '+computerScoreValue;
+            computerScore.textContent=computerScoreValue;
             return "You Lose! Rock beats Scissors"
         }
         else{
@@ -74,9 +74,11 @@ let computerScoreValue = 0;
 
 const playerScore=document.querySelector('.playerScore');
 const computerScore=document.querySelector('.computerScore');
+const playerBoard=document.querySelector('.playerBoard');
+const computerBoard=document.querySelector('.computerBoard');
 
-playerScore.textContent='you: '+playerScoreValue;
-computerScore.textContent='computer: '+computerScoreValue;
+playerScore.textContent=playerScoreValue;
+computerScore.textContent=computerScoreValue;
 
 const playAgain = document.createElement('button');
 playAgain.textContent = 'Play Again';
@@ -84,10 +86,10 @@ playAgain.textContent = 'Play Again';
 function replay(){
     playerScoreValue=0;
     computerScoreValue=0;
-    playerScore.textContent='you: '+playerScoreValue;
-    computerScore.textContent='computer: '+computerScoreValue;
-    playerScore.style.display='block'
-    computerScore.style.display='block';
+    playerScore.textContent=playerScoreValue;
+    computerScore.textContent=computerScoreValue;
+    playerBoard.style.display='flex';
+    computerBoard.style.display='flex';
     button[0].style.display='initial';
     button[1].style.display='initial';
     button[2].style.display='initial';
@@ -96,8 +98,8 @@ function replay(){
 }
 function whoWin(){
     if(playerScoreValue===5){
-        playerScore.style.display='none';
-        computerScore.style.display='none';
+        playerBoard.style.display='none';
+        computerBoard.style.display='none';
         button[0].style.display='none';
         button[1].style.display='none';
         button[2].style.display='none';
@@ -109,8 +111,8 @@ function whoWin(){
         return result.textContent='You Win!';
     }
     if(computerScoreValue===5){
-        playerScore.style.display='none'
-        computerScore.style.display='none';
+        playerBoard.style.display='none'
+        computerBoard.style.display='none';
         button[0].style.display='none';
         button[1].style.display='none';
         button[2].style.display='none';

@@ -3,14 +3,27 @@
     <head>
         <meta charset="UTF-8">
         <script src="/script.js" defer></script>
-        <title>Rock, Paper, Scissors!</title>
+        <title>Rock Paper Scissors!</title>
+        <link rel="stylesheet" href="index.css">
     </head>
     <body class='body'>
-        <div class="playerScore"></div>
-        <div class="computerScore"></div>
+        <div class="title">Rock Paper Scissors</div>
+        <div class="scoreBoard">
+            <div class="playerBoard">
+                <div class="youTitle">You</div>
+                <div class="playerScore"></div>
+            </div>
+            <div class="computerBoard">
+                <div class="computerTitle">Computer</div>
+                <div class="computerScore"></div>
+            </div>
+        </div>
         <div class="result"></div>
-        <button >Rock</button>
-        <button >Paper</button>
-        <button >Scissors</button>
+        <div class="move">
+            <button class="selectMove rock"></button>
+            <button class="selectMove paper"></button>
+            <button class="selectMove scissors"></button>
+        </div>
+        
     </body>
 </html>
