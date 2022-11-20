@@ -50,39 +50,16 @@ function playRound(playerSelection,computerSelection){
             return "Something is not right";
         }
     }
-    else if(playerScoreValue===5){
-        playerScore.style.display='none';
-        computerScore.style.display='none';
-        button[0].style.display='none';
-        button[1].style.display='none';
-        button[2].style.display='none';
-
-        playAgain.style.display='initial'
-        body.appendChild(playAgain);
-        playAgain.addEventListener('click',replay);
-        
-        return result.textContent='You Win!';
-    }
-    else if(computerScoreValue===5){
-        playerScore.style.display='none'
-        computerScore.style.display='none';
-        button[0].style.display='none';
-        button[1].style.display='none';
-        button[2].style.display='none';
-
-        playAgain.style.display='initial'
-        body.appendChild(playAgain);
-        playAgain.addEventListener('click',replay);
-
-        return result.textContent='Computer Win!';
-    }
 }
 const body = document.querySelector('body');
 const button = document.querySelectorAll('button');
 
 const rock = button[0].addEventListener('click',selectRock);
-const paper = button[1].addEventListener('click',selectPaper)
-const scissors = button[2].addEventListener('click',selectScissors)
+const rockCheck = button[0].addEventListener('click',whoWin);
+const paper = button[1].addEventListener('click',selectPaper);
+const paperCheck = button[1].addEventListener('click',whoWin);
+const scissors = button[2].addEventListener('click',selectScissors);
+const scissorsCheck = button[2].addEventListener('click',whoWin);
 
 const result = document.querySelector('.result');
 
@@ -116,6 +93,34 @@ function replay(){
     button[2].style.display='initial';
     result.textContent='Select your move';
     playAgain.style.display='none';
+}
+function whoWin(){
+    if(playerScoreValue===5){
+        playerScore.style.display='none';
+        computerScore.style.display='none';
+        button[0].style.display='none';
+        button[1].style.display='none';
+        button[2].style.display='none';
+
+        playAgain.style.display='initial'
+        body.appendChild(playAgain);
+        playAgain.addEventListener('click',replay);
+        
+        return result.textContent='You Win!';
+    }
+    if(computerScoreValue===5){
+        playerScore.style.display='none'
+        computerScore.style.display='none';
+        button[0].style.display='none';
+        button[1].style.display='none';
+        button[2].style.display='none';
+
+        playAgain.style.display='initial'
+        body.appendChild(playAgain);
+        playAgain.addEventListener('click',replay);
+
+        return result.textContent='Computer Win!';
+    }
 }
 
 
