@@ -1,7 +1,7 @@
 .body{
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    align-items: center;
     background-color: rgb(46, 50, 71);
     font-family: Arial, Helvetica, sans-serif;
     color: white;
@@ -14,7 +14,6 @@
 }
 .scoreBoard{
     display: flex;
-    justify-content: center;
     padding: 20px;
     gap: 20px;
     flex-wrap: wrap;
@@ -27,22 +26,19 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
+    align-items: center;
 }
 .playerScore,.computerScore{
-    text-align: center;
     font-size: 20px;
 }
 .youTitle,.computerTitle{
-    text-align: center;
     font-weight: bold;
 }
 .result{
-    text-align: center;
     padding: 20px;
 }
 .move{
     display: flex;
-    justify-content: center;
     gap: 20px;
     padding: 20px;
     flex-wrap: wrap;
@@ -54,7 +50,6 @@
     border-color: white;
     border-style: solid;
     border-width: 5px;
-    background-color:rgb(46, 50, 71);
     background-color: white;
 }
 .rock{

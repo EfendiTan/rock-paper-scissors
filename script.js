@@ -81,7 +81,18 @@ playerScore.textContent=playerScoreValue;
 computerScore.textContent=computerScoreValue;
 
 const playAgain = document.createElement('button');
-playAgain.textContent = 'Play Again';
+playAgain.style.width='100px';
+playAgain.style.height='100px';
+playAgain.style.backgroundColor='white';
+playAgain.style.borderRadius='50px';
+playAgain.style.backgroundImage='url(\'image/replay.png\')'
+playAgain.style.backgroundSize='70px';
+playAgain.style.backgroundPosition='center';
+playAgain.style.backgroundRepeat='no-repeat';
+playAgain.style.borderColor='white';
+playAgain.style.borderStyle='solid';
+playAgain.style.borderWidth='5px';
+
 
 function replay(){
     playerScoreValue=0;
